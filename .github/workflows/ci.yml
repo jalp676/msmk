@@ -2,13 +2,14 @@ name: CI
 
 on: [push]
 
-jobs: 
+jobs:
+  build:
+    runs-on: windows-latest
 
-build:
+    steps:
 
-runs-on: windows-latest
+      - name: Ver la hora
+        run: echo %date%
 
-steps:
-
--name: Quiero que me muestre la hora
-run: date
+      - name: Esperar 3 segundos
+        run: powershell -Command "Start-Sleep -Seconds 3"
